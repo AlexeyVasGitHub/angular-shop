@@ -7,9 +7,9 @@ import { CartService } from './services/cart.service';
   declarations: [
     CartListComponent
   ],
-  providers: [
-    CartService
-  ],
+  // providers: [
+  //   CartService
+  // ],
   imports: [
     CommonModule
   ]

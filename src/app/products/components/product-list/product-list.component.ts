@@ -9,6 +9,7 @@ import { ProductModelInterface } from '../../models/product-model-interface';
 })
 export class ProductListComponent implements OnInit {
 
+  // Немного необычно, но если удобно, то ок
   items: ProductModelInterface[] = [];
 
   constructor(private productService: ProductsService) { }
