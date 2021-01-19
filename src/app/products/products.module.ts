@@ -9,9 +9,10 @@ import { ProductListComponent } from './components/product-list/product-list.com
     ProductComponent,
     ProductListComponent,
   ],
-  providers: [
-    ProductsService
-  ],
+  // нет необходимости
+  // providers: [
+  //   ProductsService
+  // ],
   imports: [
     CommonModule
   ]

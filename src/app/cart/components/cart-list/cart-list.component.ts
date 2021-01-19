@@ -9,6 +9,7 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartListComponent implements OnInit {
 
+  // При такой организации у вас будут дубли в корзине, если купить больше 1шт одного и того же товара
   items: ProductModelInterface[] = [];
 
   constructor(private cartService: CartService) { }
