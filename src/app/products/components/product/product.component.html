@@ -1,1 +1,24 @@
-<input type="button" value="Buy" (click)="onBuy()"/>
+<mat-card [ngStyle]="{width: '20rem', height: '15rem', margin: '0.5rem'}">
+  <mat-card-header>
+    <mat-card-title>
+      {{product?.name}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{product?.description}}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Category: {{product?.category}}
+    </p>
+    <p>
+      Price: {{product?.price}}
+    </p>
+    <p>
+      Is available: {{product?.isAvailable}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onBuy()" [disabled]="!(product && product.isAvailable)">Buy</button>
+  </mat-card-actions>
+</mat-card>

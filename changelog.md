@@ -2,13 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.2] - 2021-01-24
+
+### Added
+
+- Component CartItemComponent
+- Module CartModule
+
+### Modified
+
+- CartListComponent: added MaterialUI
+- ProductListComponent: added MaterialUI
+
+### Removed
+
+- FirstComponent
+
 ## [0.0.1] - 2021-01-18
 
 ### Added
 
-- Created new project (ng new).
+- New project (ng new).
 - Created component FirstComponent
-- Created component ProductComponent
-- Created component CartListComponent
-- Created service ProductService
-- Created service CartService
+- Component ProductComponent
+- Component CartListComponent
+- Service ProductService
+- Service CartService

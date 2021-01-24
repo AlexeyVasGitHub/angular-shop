@@ -1,9 +1,5 @@
-<div *ngFor="let item of items">
-  <div>
-    <div>{{item.name}}</div>
-    <div>{{item.description}}</div>
-    <div>{{item.category}}</div>
-    <div>{{item.price}}</div>
-    <div>{{item.isAvailable}}</div>
+<div>
+  <div *ngFor="let item of items">
+    <app-product [product]="item"></app-product>
   </div>
 </div>

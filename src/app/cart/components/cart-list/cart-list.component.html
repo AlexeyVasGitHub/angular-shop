@@ -1,10 +1,6 @@
 <div>
   <div *ngIf="items.length; then emptyBlock">
-      <div *ngFor="let item of items; trackBy: trackByItems">
-        <span>{{item.name}}</span>
-        <span>{{item.description}}</span>
-        <span>{{item.price}}</span>
-      </div>
+      <app-cart-item [cartItem]="items"></app-cart-item>
   </div>
   <ng-template #emptyBlock>Cart list is empty</ng-template>
 </div>

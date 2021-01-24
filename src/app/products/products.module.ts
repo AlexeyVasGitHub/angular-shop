@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ProductComponent } from './components/product/product.component';
 import { ProductsService } from './services/products.service';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -12,8 +14,13 @@ import { ProductListComponent } from './components/product-list/product-list.com
   providers: [
     ProductsService
   ],
+  exports: [
+    ProductListComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class ProductsModule { }

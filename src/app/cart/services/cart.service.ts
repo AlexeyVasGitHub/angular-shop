@@ -1,15 +1,28 @@
 import { Injectable } from '@angular/core';
-import { ProductModelInterface } from '../../products/models/product-model-interface';
-import { CategoryEnum } from '../../products/models/category-enum.enum';
+import { CartItemInterface } from '../models/cart-item-interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
+  private cartArray: CartItemInterface[] = [];
+
   constructor() { }
 
-  getProducts(): ProductModelInterface[] {
-    return [{name: 'A product', price: 1, isAvailable: true, category: CategoryEnum.Category1, description: 'Test Description 1'}];
+  getProducts(): CartItemInterface[] {
+    return this.cartArray;
+  }
+
+  getCountTotal(): number {
+    return this.cartArray.reduce((previousValue, currentValue) => {
+      return previousValue + currentValue.count;
+    }, 0);
+  }
+
+  getPriceTotal(): number {
+    return this.cartArray.reduce((previousValue, currentValue) => {
+      return previousValue + currentValue.item.price;
+    }, 0);
   }
 }
