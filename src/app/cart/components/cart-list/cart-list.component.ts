@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductModelInterface } from '../../../products/models/product-model-interface';
 import { CartService } from '../../services/cart.service';
+import { ICartItem } from '../../models/cart-item.interface';
 
 @Component({
   selector: 'app-cart-list',
@@ -9,7 +9,7 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartListComponent implements OnInit {
 
-  items: ProductModelInterface[] = [];
+  items: ICartItem[] = [];
 
   constructor(private cartService: CartService) { }
 
@@ -17,7 +17,7 @@ export class CartListComponent implements OnInit {
     this.items = this.cartService.getProducts();
   }
 
-  trackByItems(index: number, item: ProductModelInterface): string {
-    return item.name;
+  trackByItems(index: number, cartItem: ICartItem): string {
+    return cartItem.item.name;
   }
 }

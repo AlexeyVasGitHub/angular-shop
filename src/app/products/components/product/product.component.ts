@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ProductModelInterface } from '../../models/product-model-interface';
+import { IProductModel } from '../../models/product-model.interface';
 
 @Component({
   selector: 'app-product',
@@ -9,7 +9,7 @@ import { ProductModelInterface } from '../../models/product-model-interface';
 })
 export class ProductComponent implements OnInit {
 
-  @Input() product: ProductModelInterface | undefined;
+  @Input() product: IProductModel | undefined;
 
   @Output() buyClicked = new EventEmitter<number>();
 

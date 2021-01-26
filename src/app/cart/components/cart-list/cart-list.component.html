@@ -1,6 +1,8 @@
 <div>
-  <div *ngIf="items.length; then emptyBlock">
-      <app-cart-item [cartItem]="items"></app-cart-item>
-  </div>
   <ng-template #emptyBlock>Cart list is empty</ng-template>
+  <div *ngIf="items.length; then emptyBlock">
+    <div *ngFor="let item of items">
+      <app-cart-item [cartItem]="item"></app-cart-item>
+     </div>
+  </div>
 </div>

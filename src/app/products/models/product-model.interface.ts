@@ -1,6 +1,6 @@
-import { CategoryEnum } from './category-enum.enum';
+import { CategoryEnum } from './category.enum';
 
-export interface ProductModelInterface {
+export interface IProductModel {
   id: number;
   name: string;
   description: string;

@@ -7,17 +7,20 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [
-    CartListComponent,
-    CartItemComponent
-  ],
-  providers: [
-    CartService
-  ],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatButtonModule
-  ]
+    declarations: [
+        CartListComponent,
+        CartItemComponent
+    ],
+    providers: [
+        CartService
+    ],
+    exports: [
+        CartListComponent
+    ],
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatButtonModule
+    ]
 })
 export class CartModule { }

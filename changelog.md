@@ -2,12 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.0.2] - 2021-01-24
+## [0.0.2] - 2021-01-26
 
 ### Added
 
 - Component CartItemComponent
+- Header with ViewChild
 - Module CartModule
+- Highlight directive
+- Buttons to add, remove items to cart, increase and decrease count of items in cart
 
 ### Modified
 

@@ -1,14 +1,15 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CartItemInterface } from '../../models/cart-item-interface';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ICartItem } from '../../models/cart-item.interface';
 
 @Component({
   selector: 'app-cart-item',
   templateUrl: './cart-item.component.html',
-  styleUrls: ['./cart-item.component.css']
+  styleUrls: ['./cart-item.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CartItemComponent implements OnInit {
 
-  @Input() cartItem: CartItemInterface | undefined;
+  @Input() cartItem: ICartItem | undefined;
 
   @Output() changeCount = new EventEmitter<number>();
 
