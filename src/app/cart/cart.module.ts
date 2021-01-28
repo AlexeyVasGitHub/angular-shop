@@ -11,9 +11,9 @@ import { MatButtonModule } from '@angular/material/button';
         CartListComponent,
         CartItemComponent
     ],
-    providers: [
-        CartService
-    ],
+    // providers: [
+    //     CartService
+    // ],
     exports: [
         CartListComponent
     ],
