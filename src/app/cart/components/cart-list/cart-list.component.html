@@ -1,8 +1,10 @@
 <div>
   <ng-template #emptyBlock>Cart list is empty</ng-template>
-  <div *ngIf="items.length; then emptyBlock">
+  <div *ngIf="items.length !== 0; else emptyBlock">
     <div *ngFor="let item of items">
+      <!-- Родительский компонент не отслеживает аутпуты от дочернего компонента -->
       <app-cart-item [cartItem]="item"></app-cart-item>
+
      </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 import { IProductModel } from './product-model.interface';
 import { CategoryEnum } from './category.enum';
 
+// Вы видели предыдущий пул реквест?
 export class ProductModel implements IProductModel {
   category: CategoryEnum;
   description: string;

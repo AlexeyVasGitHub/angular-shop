@@ -12,9 +12,9 @@ import { SharedModule } from '../shared/shared.module';
     ProductComponent,
     ProductListComponent,
   ],
-  providers: [
-    ProductsService
-  ],
+  // providers: [
+  //   ProductsService
+  // ],
   exports: [
     ProductListComponent
   ],
