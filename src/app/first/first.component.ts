@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { CategoryEnum } from '../products/models/category-enum.enum';
+import { Component, Inject, OnInit } from '@angular/core';
+import { ConfigOptionsService } from '../core/services/config-options.service';
+import { CategoryEnum } from '../products/models/category.enum';
+import { CONSTANTS_SERVICE } from '../core/services/constants.service';
+import { generatedString } from '../core/services/generated-string.injection-token';
+import { LocalStorageService } from '../core/services/local-storage.service';
 
 @Component({
   selector: 'app-first',
@@ -14,7 +18,10 @@ export class FirstComponent implements OnInit {
   category: CategoryEnum = CategoryEnum.Category1;
   isAvailable = true;
 
-  constructor() { }
+  constructor(configOptionsService: ConfigOptionsService,
+              @Inject(CONSTANTS_SERVICE) constants: any,
+              @Inject(generatedString) generated: string,
+              localStorage: LocalStorageService) { }
 
   ngOnInit(): void {
   }

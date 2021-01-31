@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3] - 2021-01-31
+
+### Added
+
+- ClickFonts directive
+- Constants service
+- Generator service
+- LocalStorage service
+- ConfigOptions service
+
+### Modified
+
+- CartService
+- FirstComponent: added services
+
 ## [0.0.2] - 2021-01-26
 
 ### Added
@@ -16,10 +31,6 @@ All notable changes to this project will be documented in this file.
 
 - CartListComponent: added MaterialUI
 - ProductListComponent: added MaterialUI
-
-### Removed
-
-- FirstComponent
 
 ## [0.0.1] - 2021-01-18
 
