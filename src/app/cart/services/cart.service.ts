@@ -9,13 +9,13 @@ export class CartService {
   public totalQuantity = 0;
   public totalSum = 0;
 
-  private cartProducts: ICartItem[] = [];
-
-  constructor() { }
-
   get isEmptyCart(): boolean {
     return this.cartProducts.length === 0;
   }
+
+  private cartProducts: ICartItem[] = [];
+
+  constructor() { }
 
   getProducts(): ICartItem[] {
     return this.cartProducts;

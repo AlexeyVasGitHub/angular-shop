@@ -13,10 +13,11 @@ import { generatedString } from './services/generated-string.injection-token';
     CommonModule
   ],
   providers: [
+    GeneratorService,
     {
       provide: generatedString,
-      useFactory: GeneratorFactory,
-      deps: [10, GeneratorService]
+      useFactory: GeneratorFactory(10),
+      deps: [GeneratorService]
     },
     {
       provide: CONSTANTS_SERVICE,
