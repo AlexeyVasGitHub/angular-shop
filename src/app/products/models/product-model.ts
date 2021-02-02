@@ -2,19 +2,13 @@ import { IProductModel } from './product-model.interface';
 import { CategoryEnum } from './category.enum';
 
 export class ProductModel implements IProductModel {
-  category: CategoryEnum;
-  description: string;
-  isAvailable: boolean;
-  name: string;
-  price: number;
-  id: number;
+  category: CategoryEnum = 0;
+  description = '';
+  isAvailable = false;
+  name = '';
+  price = 0;
+  id = 0;
 
-  constructor(id?: number, name?: string, price?: number, isAvailable?: boolean, description?: string, category?: CategoryEnum) {
-    this.name = name || '';
-    this.price = price || 0;
-    this.isAvailable = isAvailable || false;
-    this.description = description || '';
-    this.category = category || CategoryEnum.Category1;
-    this.id = id || 0;
+  constructor() {
   }
 }
