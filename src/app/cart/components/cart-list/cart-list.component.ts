@@ -10,6 +10,9 @@ import { ICartItem } from '../../models/cart-item.interface';
 export class CartListComponent implements OnInit {
 
   items: ICartItem[] = [];
+  orderByArray = [{name: 'Price', value: 'price'}, {name: 'Count', value: 'count'}, {name: 'Name', value: 'name'}];
+  selectedOrderBy = 'price';
+  isAscending = false;
 
   constructor(private cartService: CartService) { }
 

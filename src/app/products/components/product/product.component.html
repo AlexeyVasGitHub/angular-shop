@@ -1,7 +1,7 @@
 <mat-card [ngStyle]="{width: '20rem', height: '15rem', margin: '0.5rem'}" appHighlight>
   <mat-card-header>
     <mat-card-title>
-      {{product?.name}}
+      {{product?.name | titlecase}}
     </mat-card-title>
     <mat-card-subtitle>
       {{product?.description}}
@@ -9,10 +9,10 @@
   </mat-card-header>
   <mat-card-content>
     <p>
-      Category: {{product?.category}}
+      Category: {{getProductCategory(product?.category) | uppercase}}
     </p>
     <p>
-      Price: {{product?.price}}
+      Price: {{product?.price | currency}}
     </p>
     <p>
       Is available: {{product?.isAvailable}}

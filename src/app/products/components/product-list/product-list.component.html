@@ -1,5 +1,5 @@
 <div>
-  <div *ngFor="let item of items">
+  <div *ngFor="let item of productService.getProducts() | async">
     <app-product (buyClicked)="onBuyClicked($event)" [product]="item"></app-product>
   </div>
 </div>

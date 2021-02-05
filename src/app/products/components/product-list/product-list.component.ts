@@ -8,18 +8,10 @@ import { CartService } from '../../../cart/services/cart.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent {
+  constructor(public productService: ProductsService, private cartService: CartService) { }
 
-  items: IProductModel[] = [];
-
-  constructor(private productService: ProductsService, private cartService: CartService) { }
-
-  ngOnInit(): void {
-    this.items = this.productService.getProducts();
-  }
-
-  onBuyClicked(id: number): void {
-    const item = this.items.find(x => x.id === id);
+  onBuyClicked(item: IProductModel): void {
     if (item) {
       this.cartService.addProduct(item);
     }

@@ -2,13 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HighlightDirective } from './directives/highlight.directive';
 import { ClickFontsDirective } from './directives/click-fonts.directive';
-
-
+import { OrderByPipe } from './pipes/order-by.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [HighlightDirective, ClickFontsDirective],
+  declarations: [HighlightDirective, ClickFontsDirective, OrderByPipe],
   exports: [
-    HighlightDirective
+    HighlightDirective,
+    OrderByPipe,
+    CommonModule,
+    FormsModule
   ],
   imports: [
     CommonModule

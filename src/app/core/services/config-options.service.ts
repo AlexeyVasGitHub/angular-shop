@@ -11,7 +11,7 @@ export class ConfigOptionsService {
   constructor() { }
 
   setValues(config: IConfigModel): void {
-    this.configOptions = config;
+    this.configOptions = {...this.configOptions, ...config};
   }
 
   getValues(): IConfigModel | null {

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IProductModel } from '../../models/product-model.interface';
+import { CategoryEnum, GetCategoryName } from '../../models/category.enum';
 
 @Component({
   selector: 'app-product',
@@ -11,7 +12,7 @@ export class ProductComponent implements OnInit {
 
   @Input() product: IProductModel | undefined;
 
-  @Output() buyClicked = new EventEmitter<number>();
+  @Output() buyClicked = new EventEmitter<IProductModel>();
 
   constructor() { }
 
@@ -19,6 +20,13 @@ export class ProductComponent implements OnInit {
   }
 
   onBuy(): void {
-    this.buyClicked.emit(this.product?.id);
+    this.buyClicked.emit(this.product);
+  }
+
+  getProductCategory(value: CategoryEnum | undefined): string {
+    if (!value) {
+      return '';
+    }
+    return GetCategoryName(value);
   }
 }

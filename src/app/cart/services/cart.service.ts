@@ -28,7 +28,9 @@ export class CartService {
     } else {
       this.cartProducts.push({
         count,
-        item: product
+        item: product,
+        name: product.name,
+        price: product.price
       });
     }
   }

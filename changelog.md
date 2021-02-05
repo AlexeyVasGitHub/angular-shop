@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.4] - 2021-02-05
+
+### Added
+
+- OrderBy pipe
+
+### Modified
+
+- Add pipes to: cart-list.component, cart-item.component,
+  product-list.component, product-item.component
+- Product service return observable
+
 ## [0.0.3] - 2021-01-31
 
 ### Added
