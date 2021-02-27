@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IProductModel } from '../../models/product-model.interface';
 import { CategoryEnum, GetCategoryName } from '../../models/category.enum';
+import { ProductsService } from '../../services/products.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-product',
@@ -14,9 +17,20 @@ export class ProductComponent implements OnInit {
 
   @Output() buyClicked = new EventEmitter<IProductModel>();
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, public productService: ProductsService) { }
 
   ngOnInit(): void {
+    const observer = {
+      next: (product: IProductModel | undefined) => {
+        if (product) {
+          this.product = {...product};
+        }
+        },
+      error: (err: any) => console.log(err)
+    };
+    // @ts-ignore
+    this.route.paramMap.pipe(switchMap((params: ParamMap) => this.productService.getProduct(+params.get('productID'))))
+      .subscribe(observer);
   }
 
   onBuy(): void {
