@@ -8,6 +8,9 @@
     <p>
       Price: {{(cartItem?.item?.price || 0) | currency}}
     </p>
+    <p>
+      Count: {{(cartItem?.count || 0)}}
+    </p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary" (click)="onChangeCount((this.cartItem?.count || 0) + 1)">+1</button>

@@ -8,6 +8,10 @@ import { FirstComponent } from './first/first.component';
 import { CoreModule } from './core/core.module';
 import { PathNotFoundComponent } from './layout/components/path-not-found/path-not-found.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
     BrowserModule,
     CoreModule,
     MatGridListModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
     // MUST BE LAST
     AppRoutingModule,
   ],

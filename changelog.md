@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.5] - 2021-02-27
+
+### Added
+
+- Admin module: manage-product.component, products.component, orders.component,
+- is-admin-available.guard
+- can-deactivate.guard
+
+### Modified
+
+- app.component,
+- cart.component
+- added local-storage.service to cart.service
+
 ## [0.0.4] - 2021-02-05
 
 ### Added

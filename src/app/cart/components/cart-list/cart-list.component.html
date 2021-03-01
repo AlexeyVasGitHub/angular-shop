@@ -2,16 +2,24 @@
   <ng-template #emptyBlock>Cart list is empty</ng-template>
   <div *ngIf="items.length !== 0; else emptyBlock">
     <div *ngFor="let item of items | orderBy:[selectedOrderBy]">
-      <app-cart-item [cartItem]="item"></app-cart-item>
-     </div>
+      <app-cart-item
+        [cartItem]="item"
+        (changeCount)="onChangeCount($event)"
+        (deleteItem)="onDeleteItem($event)">
+      </app-cart-item>
+    </div>
   </div>
   <div>
-    <span>Order by:</span>
-    <mat-select [(ngModel)]="selectedOrderBy" [style]="{width: '200px'}">
-      <mat-option *ngFor="let orderBy of orderByArray" [value]="orderBy.value">
-        {{orderBy.name}}
-      </mat-option>
-    </mat-select>
+    <mat-form-field appearance="standard">
+      <mat-label>Order by</mat-label>
+      <mat-select [(ngModel)]="selectedOrderBy">
+        <mat-option *ngFor="let orderBy of orderByArray" [value]="orderBy.value">
+          {{orderBy.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
     <mat-checkbox [(ngModel)]="isAscending">Is ascending</mat-checkbox>
   </div>
 </div>

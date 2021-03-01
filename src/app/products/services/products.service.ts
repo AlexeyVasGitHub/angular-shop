@@ -31,4 +31,15 @@ export class ProductsService {
       map(items => items.find(product => product.id === id)),
     );
   }
+
+  updateProduct(product: IProductModel): void {
+    const i = this.data.findIndex(u => u.id === product.id);
+    if (i > -1) {
+      this.data.splice(i, 1, product);
+    }
+  }
+
+  addProduct(product: IProductModel): void {
+    this.data.push(product);
+  }
 }

@@ -1,16 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductsComponent } from './components/products/products.component';
-import { ManageProductComponent } from './components/manage-product/manage-product.component';
-import { OrdersComponent } from './components/orders/orders.component';
-import { AdminComponent } from './admin/admin.component';
-
+import { ManageProductComponent, OrdersComponent, ProductsComponent } from './components';
+import { AdminComponent } from './admin.component';
+import { RouterModule } from '@angular/router';
+import { AdminRoutingModule } from './admin-routing.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { SharedModule } from '../shared/shared.module';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
   declarations: [ProductsComponent, ManageProductComponent, OrdersComponent, AdminComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    AdminRoutingModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    SharedModule,
+    MatButtonModule
   ]
 })
-export class AdminModule { }
+export class AdminModule {
+}

@@ -11,7 +11,7 @@ export class CartItemComponent implements OnInit {
 
   @Input() cartItem: ICartItem | undefined;
 
-  @Output() changeCount = new EventEmitter<number>();
+  @Output() changeCount = new EventEmitter<any>();
 
   @Output() deleteItem = new EventEmitter<number>();
 
@@ -21,7 +21,10 @@ export class CartItemComponent implements OnInit {
   }
 
   onChangeCount(count: number): void {
-    this.changeCount.emit(count);
+    if (this.cartItem){
+      this.cartItem.count = count;
+      this.changeCount.emit({id: this.cartItem?.item.id, count});
+    }
   }
 
   onDeleteItem(): void {

@@ -23,4 +23,14 @@ export class CartListComponent implements OnInit {
   trackByItems(index: number, cartItem: ICartItem): string {
     return cartItem.item.name;
   }
+
+  onChangeCount(params: any): void {
+    const {id, count} = params;
+    this.cartService.changeQuantity(id, count);
+  }
+
+  onDeleteItem(id: number): void {
+    this.cartService.removeProduct(id);
+    this.items = this.cartService.getProducts();
+  }
 }

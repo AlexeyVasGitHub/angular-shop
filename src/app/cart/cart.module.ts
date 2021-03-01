@@ -10,6 +10,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
 import { CartComponent } from './cart.component';
 import { RouterModule } from '@angular/router';
 import { CartRoutingModule } from './cart-routing.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CartRoutingModule } from './cart-routing.module';
     CartListComponent,
   ],
   imports: [
+    MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
     MatOptionModule,

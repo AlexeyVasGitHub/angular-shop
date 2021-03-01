@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
     HighlightDirective,
     OrderByPipe,
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
   imports: [
     CommonModule
