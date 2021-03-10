@@ -6,6 +6,8 @@ import { AuthGuard } from './core/guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
+    // тут есть проблема с тем, что редирект не работает в глубину, например, на второй уровень
+    // поэтому ничего не загружается при старте
     redirectTo: '/products-list',
     pathMatch: 'full'
   },
